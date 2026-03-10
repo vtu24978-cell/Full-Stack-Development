@@ -1,0 +1,106 @@
+/* Page Background */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("event.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Page Heading */
+h2 {
+    text-align: center;
+    color: #ef0638;
+    margin-top: 30px;
+}
+
+/* Input Box */
+input {
+    padding: 10px;
+    width: 250px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Buttons */
+button {
+    padding: 10px 15px;
+    background-color: #00c853;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #009624;
+}
+
+/* Event List */
+ul {
+    list-style: none;
+    padding: 0;
+    width: 400px;
+    margin: 20px auto;
+}
+
+/* Event Item */
+li {
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* History Link */
+a {
+    display: block;
+    text-align: left;
+    margin-top: 20px;
+    color: rgb(1, 255, 48);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* Login Page Background */
+.register-page {
+    background-image: url("event.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+/* Home Page Background */
+.index-page {
+    background-image: url("image.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.history-page {
+    background-image: url("event.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+/* Center Login Box */
+.box {
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+    width: 300px;
+    margin: auto;
+    margin-top: 150px;
+    text-align: center;
+    border-radius: 8px;
+}

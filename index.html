@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Events</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="index-page">
+
+<h2>Real-Time Events</h2>
+
+<input id="name" placeholder="Enter your name" required>
+<br><br>
+
+<input id="msg" placeholder="Enter event name">
+<button onclick="sendEvent()">Send Event</button>
+
+<ul id="events"></ul>
+
+<a href="history.html">My Registrations</a>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+
+const socket = io();
+
+function sendEvent(){
+
+const message = document.getElementById("msg").value;
+
+socket.emit("newEvent", message);
+
+}
+
+socket.on("syncEvent",(data)=>{
+
+const li = document.createElement("li");
+
+li.innerHTML = `
+${data}
+<button onclick="registerEvent('${data}')">Register</button>
+`;
+
+document.getElementById("events").appendChild(li);
+
+});
+
+async function registerEvent(eventMsg){
+
+const name = document.getElementById("name").value;
+
+const res = await fetch("/registerEvent",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({
+name:name,
+message:eventMsg
+})
+});
+
+const result = await res.text();
+
+alert(result);
+
+}
+
+</script>
+
+</body>
+</html>
